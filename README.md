@@ -77,9 +77,3 @@ Team
 Project Lead: Shraddha Hebbar
 Domain: Sustainability with AI-ML
 Project Name: OceanEye-AI
-
-
-
----
-
-💚 “AI for Earth — Saving Oceans, One Pixel at a Time.”
