@@ -1,53 +1,73 @@
-# Problem Statement
-Marine plastic pollution is a growing environmental crisis.  
-The goal of OceanEye-AI is to detect and classify plastic waste floating on ocean surfaces using aerial or satellite images.  
-The system uses Deep Learning (CNN) to automatically identify polluted regions, helping organizations track and clean affected marine zones efficiently.
+Week2 Submission: Dataset Preparation & CNN Training
+Problem Statement
 
----
+Marine plastic pollution continues to threaten marine life and ecosystems.
+OceanEye-AI automates detection and classification of plastic waste floating on ocean surfaces using Deep Learning (CNN).
+This week’s focus: preparing a usable dataset and training the CNN model for accurate classification.
 
-# Dataset
-Dataset Name: Ocean Plastic Dataset  
-Source: [NOAA Marine Debris Program](https://marinedebris.noaa.gov/), [Kaggle Marine Debris Dataset](https://www.kaggle.com/)  
-Description:  
-A collection of labeled ocean images showing:
-- Clean water  
-- Plastic waste  
-- Other marine debris  
+Dataset
 
-Dataset Folders:
-data/ 
-├── raw/ → Original satellite or drone images
-├── processed/ → Preprocessed & labeled images
-└── README.md → Dataset documentation
+Polluted images: Collected from Roboflow
 
----
+Clean images: Collected manually
 
-# Tools and Technologies
-| Tool | Purpose |
-|------|----------|
-| Python | Core programming language |
-| TensorFlow / Keras | Deep Learning framework |
-| OpenCV | Image preprocessing |
-| NumPy / Pandas | Data handling |
-| Jupyter Notebook | Experimentation and visualization |
+Preprocessing:
 
----
+Resized to 128×128 pixels
 
-# Repository Structure
+Normalized pixel values
 
-OceanEye-AI/ │
-├── data/                   
-# Dataset files ├── notebooks/
-# Model training notebooks ├── src/
-# Python source scripts ├── README.md
-# Project overview ├── problem_statement.md    
-# Detailed problem statement ├── project-structure.md    
-# Folder organization 
-└── Week1_Submission.md     # Weekly progress report
+Train/test split applied
 
----
+Folder Structure:
 
-# Project Lead
+data/
+└── processed/
+    ├── clean/
+    │   ├── train/
+    │   └── test/
+    └── polluted/
+        ├── train/
+        └── test/
+
+
+Preview: Sample images from each class were visualized in the DatasetPrep notebook.
+
+Tools and Technologies
+Tool	Purpose
+Python	Core programming language
+TensorFlow / Keras	Deep Learning framework
+OpenCV	Image preprocessing
+NumPy / Pandas	Data handling
+Matplotlib	Visualization
+Jupyter Notebook	Experimentation and workflow
+Notebooks
+
+DatasetPrep.ipynb → Prepares and visualizes the dataset
+
+CNN_Training.ipynb → Defines, trains, and evaluates the CNN model
+
+Model Training & Results
+
+Architecture: 3 convolutional layers + 2 dense layers + dropout
+
+Data Augmentation: rotation, width/height shift, horizontal flip
+
+Train/Test split: 80/20
+
+Test Accuracy: ~83%
+
+Outputs: Training curves, evaluation metrics, and model saved as water_quality_cnn.h5
+
+⚠️ Note: water_quality_cnn.h5 is too large for GitHub; download separately from linked Drive folder.
+
+Usage
+
+Open DatasetPrep.ipynb → run all cells to generate X_train, X_test, y_train, y_test
+
+Open CNN_Training.ipynb → run all cells to train the model and view evaluation
+
+Project Lead
 Name: Shraddha Hebbar  
 Domain: Sustainability with AI / ML    
 GitHub Repo: [https://github.com/shraddha1320/OceanEye-AI](https://github.com/shraddha1320/OceanEye-AI)
