@@ -29,26 +29,7 @@ Promote sustainability through technology.
 Provide a scalable model for integration with environmental monitoring systems.
 
 ---
- Methodology
 
-1. Data Collection:
-Gather open-source ocean datasets (e.g., Kaggle Ocean Plastic Dataset, NOAA images).
-
-2. Preprocessing:
-Resize and normalize images
-Augment data for balance and diversity
-
-3. Model Development (CNN):
-Implement using TensorFlow/Keras
-Layers: Conv2D → MaxPooling → Flatten → Dense → Softmax
-
-4. Training & Evaluation:
-Evaluate on accuracy, precision, recall, F1-score
-Visualize using confusion matrix
-
-5. (Future) Deploy using Streamlit as a web app
-
----
  Project Structure
 OceanEye-AI/
 │
@@ -67,10 +48,23 @@ OpenCV
 Jupyter Notebook
 
 ---
- 
- Sustainability Impact
-OceanEye-AI supports UN SDG 14 – Life Below Water, contributing to cleaner oceans and healthier marine ecosystems.
-By automating detection, it reduces human effort and accelerates environmental response.
+## Week2 Submission: DatasetPrep & CNN Training
+
+### Dataset
+- Polluted images: Roboflow
+- Clean images: Collected manually
+- Preprocessing: Resized to 128x128, normalized, train/test split
+
+### Notebooks
+- `DatasetPrep.ipynb` → Prepares dataset, previews images
+- `CNN_Training.ipynb` → Trains CNN, evaluates, plots results
+
+### Usage
+1. Open `DatasetPrep.ipynb` → Run all cells to generate `X_train, X_test, y_train, y_test`
+2. Open `CNN_Training.ipynb` → Run all cells to train the model and see evaluation
+
+### Results
+- CNN test accuracy: 83%
 
 ---
 Team
