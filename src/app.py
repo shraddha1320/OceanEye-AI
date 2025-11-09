@@ -1,10 +1,29 @@
+import os
+import gdown
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
+import numpy as np
+from PIL import Image
+import streamlit as st
+
+# === Download model if not present ===
+model_path = "water_quality_cnn.h5"
+if not os.path.exists(model_path):
+    print("Model not found locally. Downloading from Drive...")
+    url = "https://drive.google.com/drive/folders/1JdOTJi03MRxSSuOUd8Q51CC3k6M4mDdH?usp=sharing"  D
+    gdown.download(url, model_path, quiet=False)
+else:
+    print("Model already exists locally.")
+
+# === Load the model ===
+model = load_model(model_path)
 import streamlit as st
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
 
-# 🫧 Page setup
+# Page setup
 st.set_page_config(
     page_title="OceanEye-AI",
     page_icon="🌊",
@@ -94,9 +113,6 @@ st.markdown("""
 st.markdown("<h1>OceanEye-AI🐋</h1>", unsafe_allow_html=True)
 st.write("Upload a photo and let this lil CNN tell if it’s **Clean** or **Polluted** ")
 
-# Load your model
-model = load_model("water_quality_cnn.h5")
-
 #  File uploader
 uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
@@ -127,3 +143,4 @@ if uploaded_file is not None:
 
 #  Footer
 st.markdown('<div class="footer">Made by Shraddha using CNN + Streamlit</div>', unsafe_allow_html=True)
+
