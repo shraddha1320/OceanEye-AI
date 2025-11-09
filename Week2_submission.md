@@ -61,7 +61,7 @@ Open DatasetPrep.ipynb → run all cells to generate X_train, X_test, y_train, y
 
 Open CNN_Training.ipynb → run all cells to train the CNN model and view evaluation.
 
- Note: water_quality_cnn.h5 is large (>100MB). Download separately from [Google Drive link] before running the GUI.
+ Note: water_quality_cnn.h5 is large (>100MB). Download separately from (https://drive.google.com/drive/folders/1JdOTJi03MRxSSuOUd8Q51CC3k6M4mDdH?usp=sharing) before running the GUI.
 
 Project Lead
 Name	                Domain	                          GitHub
